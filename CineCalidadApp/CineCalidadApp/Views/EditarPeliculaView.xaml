@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CineCalidadApp.Views.EditarPeliculaView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding GuardarCommand}" Text="Guardar"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Image Source="{Binding Imagen}" WidthRequest="200" HeightRequest="200"></Image>
+        <Label>Titulo:</Label>
+        <Entry Text="{Binding Pelicula.Titulo}"></Entry>
+        <Label >Genero:</Label>
+        <Entry Text="{Binding Pelicula.Genero}"></Entry>
+        <Label>Sala:</Label>
+        <Picker ItemsSource="{Binding Pelicula.Sala}" SelectedIndex="0"></Picker>
+        <Label>Duracion:</Label>
+        <Entry Text="{Binding Pelicula.Duracion}"></Entry>
+        <Label>Imagen (URL):</Label>
+        <Entry Text="{Binding Pelicula.Imagen}"></Entry>
+        <Label Text="{Binding Error}"></Label>
+    </StackLayout>
+
+</ContentPage>

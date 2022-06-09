@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:CineCalidadApp.ViewModels" x:DataType="viewmodels:PeliculasViewModel"
+             xmlns:models="clr-namespace:CineCalidadApp.Models"
+             x:Class="CineCalidadApp.Views.AgregarPeliculaView">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding AgregarCommand}" Text="Agregar"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <viewmodels:PeliculasViewModel x:Name="pvm"></viewmodels:PeliculasViewModel>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Label>Titulo:</Label>
+        <Entry Text="{Binding Pelicula.Titulo}"></Entry>
+        <Label >Genero:</Label>
+        <Entry Text="{Binding Pelicula.Genero}"></Entry>
+        <Label>Sala:</Label>
+        <Picker ItemsSource="{Binding Pelicula.Sala}" SelectedIndex="0"></Picker>
+        <Label>Duracion:</Label>
+        <Entry Text="{Binding Pelicula.Duracion}"></Entry>
+        <Label>Imagen (URL):</Label>
+        <Entry Text="{Binding Pelicula.Imagen}"></Entry>
+        <Label Text="{Binding Error}" TextColor="Red"></Label>
+        
+    </StackLayout>
+</ContentPage>

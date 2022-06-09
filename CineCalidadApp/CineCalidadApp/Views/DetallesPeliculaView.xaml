@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CineCalidadApp.Views.DetallesPeliculaView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Pelicula.Titulo}"></Label>
+            <Label Text="{Binding Pelicula.Genero}"></Label>
+            <Label Text="{Binding Pelicula.Sala}"></Label>
+            <Label Text="{Binding Pelicula.Duracion}"></Label>
+            <Label Text="{Binding Pelicula.Imagen}"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

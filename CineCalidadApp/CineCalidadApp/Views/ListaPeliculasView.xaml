@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:models="clr-namespace:CineCalidadApp.Models"
+             xmlns:viewmodels="clr-namespace:CineCalidadApp.ViewModels" x:DataType="viewmodels:PeliculasViewModel"
+             x:Class="CineCalidadApp.Views.ListaPeliculasView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding CambiarVistaCommand}" CommandParameter="Agregar" Text="Nuevo"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <viewmodels:PeliculasViewModel x:Name="pvm"></viewmodels:PeliculasViewModel>
+    </ContentPage.BindingContext>
+    <Grid>
+        <StackLayout BackgroundColor="Red" HeightRequest="100" WidthRequest="100">
+            <Label >Cine Calidad </Label>
+            <Image HorizontalOptions="End" Source="https://cdn-icons-png.flaticon.com/128/1101/1101793.png"></Image>
+        </StackLayout>
+        <ScrollView>
+            <FlexLayout BindableLayout.ItemsSource="{Binding Peliculas}" Direction="Row" Wrap="Wrap" >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image Source="{Binding Pelicula.Imagen}" ></Image>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
